@@ -4,12 +4,12 @@ $("ul").on("click", "li", function(){
 });
 
 //this is the code behind deleting your Todos from the list.
-$("li").on("click", "span", function(event){
-    $(this).parent().fadeOut(function(){
-        $(this).remove();
-    });
-    event.stopPropagation();
-});
+// $("li").on("click", "span", function(event){
+//     $(this).parent().fadeOut(function(){
+//         $(this).remove();
+//     });
+//     event.stopPropagation();
+// });
 
 // $("input[type='text']").on("keypress", function(event){
 //    var scores = $(this).val();
@@ -20,11 +20,13 @@ $("li").on("click", "span", function(event){
 //    }
 // });
 
+
 if(!localStorage.folder){
     localStorage.folder = "[]";
 }
 function addTodo(){
     var folder = JSON.parse(localStorage.folder);
+    ///console.log(folder);
     folder.push(input.value);
     localStorage.folder = JSON.stringify(folder);
 };
@@ -32,8 +34,14 @@ function addTodo(){
 function getTodos(){
     var folder = JSON.parse(localStorage.folder);
     folder.map( (files) => {
-        console.log(files);
+        //console.log(files);
         const ul = $("ul").html();
-        $("ul").html (`${ul} <li><span>X</span> ${files} </li>`)
+        $("ul").html (`${ul} <li> ${files} <span>X</span></li>`)
     });
 };
+
+$("button").on("click", function(){
+    localStorage.clear();
+})
+
+
