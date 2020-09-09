@@ -51,7 +51,10 @@ $("ul").on("click", "span", function(e){
     var folder = JSON.parse(localStorage.folder);
 
         var filtered = $(this).filter(function(value, index, arr){
-            //  $(this).parent().remove();
+            //this is the code👇👇that is running the remove function the todo App  
+            $(this).parent().remove();
+
+             //this is the code👆👆that is running the remove function the todo App  
             localStorage.getItem(JSON.parse(localStorage.folder));
            var eShockAm = localStorage.removeItem(index);
            console.log(arr);
