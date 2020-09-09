@@ -36,12 +36,21 @@ function getTodos(){
     folder.map( (files) => {
         //console.log(files);
         const ul = $("ul").html();
-        $("ul").html (`${ul} <li> ${files} <span>X</span></li>`)
+        $("ul").html (`${ul} <li> ${files} <span><strong>🗑</strong></span></li>`)
     });
 };
 
 $("button").on("click", function(){
     localStorage.clear();
+});
+
+$("li").on("click", "span", function(){
+    var spanVal = '$(this).val()';
+    localStorage.removeItem();
+    // $("ul").localStorage.removeItem(`<li><span>X</span> ${scores} </li>`)
+    const ul = $("ul").html();
+    $("ul").localStorage.removeItem(`${ul} <li> ${files} <span>X</span></li>`)
+
 })
 
 

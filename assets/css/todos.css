@@ -52,6 +52,10 @@ li{
     color: #666;
     transition: all 500ms;
     padding: 11px 30px 11px 20px;
+    text-rendering: fit-content;
+    text-justify: inherit;
+    text-justify: inherit;
+    text-emphasis: fit-content;
 }
 li:nth-child(2n){
     background: #f1f1f1;
