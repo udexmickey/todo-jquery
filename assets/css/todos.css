@@ -69,7 +69,7 @@ li:hover{
     margin-left: auto;
     float: right;
     max-height: max-content;
-    padding: 11px;
+    padding: 11px 30px 11px 20px;
     outline: none;
     border: none;
     background: #f1f1f1;
@@ -80,7 +80,6 @@ li:hover{
     box-sizing: border-box;
 }
 #clearAll:focus, input[type='submit']:focus{
-    font-stretch: wider;
     flood-opacity: inherit;
     font-size: 18.5px;
     background: #fff;
