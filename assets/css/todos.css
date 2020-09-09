@@ -77,8 +77,9 @@ li:hover{
     color: #2980b9;
     transition: all 300ms;
     cursor: pointer;
+    box-sizing: border-box;
 }
-#clearAll:focus{
+#clearAll:focus, input[type='submit']:focus{
     font-stretch: wider;
     flood-opacity: inherit;
     font-size: 18.5px;
