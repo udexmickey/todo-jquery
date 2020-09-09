@@ -26,8 +26,8 @@ if(!localStorage.folder){
     localStorage.folder = "[]";
 }
 function addTodo(){
+
     var folder = JSON.parse(localStorage.folder);
-    ///console.log(folder);
     folder.push(input.value);
     localStorage.folder = JSON.stringify(folder);
 };
@@ -35,7 +35,7 @@ function addTodo(){
 function getTodos(){
     var folder = JSON.parse(localStorage.folder);
     folder.map( (files) => {
-        //console.log(files);
+
         const ul = $("ul").html();
         $("ul").html (`${ul} <li> ${files} <span><strong>🗑</strong></span></li>`)
     });
@@ -47,19 +47,23 @@ $("button").on("click", function(){
 
 $("ul").on("click", "span", function(e){
     event.stopPropagation();
-    // $(this).parent().fadeOut(function(){
-    //             // $(this).remove();
-    //             window.localStorage.removeItem();
-    //         });
-    $(this).parent().remove();
-    // $("li").remove($(this).val());
-    // $("ul").remove(`<li><span>X</span> $(this).val() </li>`)
-    // var spanVal = '$(this).val()';
-    // localStorage.removeItem();
-    // // $("ul").localStorage.removeItem(`<li><span>X</span> ${scores} </li>`)
-    // const ul = $("ul").html();
-    // $("ul").localStorage.removeItem(`${ul} <li> ${files} <span>X</span></li>`)
-    // $(this).style.display = "none";
+   
+    var folder = JSON.parse(localStorage.folder);
+
+        var filtered = $(this).filter(function(value, index, arr){
+            //  $(this).parent().remove();
+            localStorage.getItem(JSON.parse(localStorage.folder));
+           var eShockAm = localStorage.removeItem(index);
+           console.log(arr);
+
+           });
+           
+    //        const index = folder.indexOf($(this));
+    //        if (index > -1) {
+    //            folder.splice(index, 1);
+    //        };
+    // // });
 });
+
 
 
