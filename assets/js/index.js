@@ -1,6 +1,7 @@
 //the section that marks through each list item when clicked upon.
 $("ul").on("click", "li", function(){
-    $(this).toggleClass("complete");
+     $(this).toggleClass("complete");
+
 });
 
 //this is the code behind deleting your Todos from the list.
@@ -44,13 +45,21 @@ $("button").on("click", function(){
     localStorage.clear();
 });
 
-$("li").on("click", "span", function(){
-    var spanVal = '$(this).val()';
-    localStorage.removeItem();
-    // $("ul").localStorage.removeItem(`<li><span>X</span> ${scores} </li>`)
-    const ul = $("ul").html();
-    $("ul").localStorage.removeItem(`${ul} <li> ${files} <span>X</span></li>`)
-
-})
+$("ul").on("click", "span", function(e){
+    event.stopPropagation();
+    // $(this).parent().fadeOut(function(){
+    //             // $(this).remove();
+    //             window.localStorage.removeItem();
+    //         });
+    $(this).parent().remove();
+    // $("li").remove($(this).val());
+    // $("ul").remove(`<li><span>X</span> $(this).val() </li>`)
+    // var spanVal = '$(this).val()';
+    // localStorage.removeItem();
+    // // $("ul").localStorage.removeItem(`<li><span>X</span> ${scores} </li>`)
+    // const ul = $("ul").html();
+    // $("ul").localStorage.removeItem(`${ul} <li> ${files} <span>X</span></li>`)
+    // $(this).style.display = "none";
+});
 
 
